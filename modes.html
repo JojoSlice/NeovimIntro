@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Vim Modes Guide</title>
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-white font-sans leading-relaxed">
+	<header class="bg-blue-800 py-8 text-center">
+		<h1 class="text-4xl font-bold">Vim Modes Guide</h1>
+		<p class="text-lg">En översikt över de olika lägena i Vim och Neovim</p>
+	</header>
+
+	<main class="container mx-auto my-12 p-6 bg-gray-800 shadow-lg rounded-lg">
+		<section>
+			<h2 class="text-3xl font-semibold mb-4">1. Normal Mode</h2>
+			<p>I Normal Mode navigerar och manipulerar du text utan att skriva direkt.</p>
+			<ul class="list-disc ml-8 mt-4">
+				<li><strong>h, j, k, l</strong> - Navigera (vänster, ner, upp, höger)</li>
+				<li><strong>dw</strong> - Radera ett ord</li>
+				<li><strong>w, b</strong> - Hoppa till nästa/föregående ord</li>
+			</ul>
+		</section>
+
+		<section class="mt-8">
+			<h2 class="text-3xl font-semibold mb-4">2. Insert Mode</h2>
+			<p>I Insert Mode skriver du direkt i texten, som i en vanlig editor.</p>
+			<ul class="list-disc ml-8 mt-4">
+				<li><strong>i</strong> - Infoga text vid markören</li>
+				<li><strong>a</strong> - Börja skriva efter markören</li>
+				<li><strong>Esc</strong> - Gå tillbaka till Normal Mode</li>
+			</ul>
+		</section>
+
+		<section class="mt-8">
+			<h2 class="text-3xl font-semibold mb-4">3. Visual Mode</h2>
+			<p>Visual Mode används för att markera text för redigering eller kopiering.</p>
+			<ul class="list-disc ml-8 mt-4">
+				<li><strong>v</strong> - Markera tecken</li>
+				<li><strong>V</strong> - Markera hela rader</li>
+				<li><strong>Ctrl-v</strong> - Markera block</li>
+			</ul>
+		</section>
+
+		<section class="mt-8">
+			<h2 class="text-3xl font-semibold mb-4">4. Command-Line Mode</h2>
+			<p>I Command-Line Mode skriver du kommandon för att spara, avsluta eller söka.</p>
+			<ul class="list-disc ml-8 mt-4">
+				<li><strong>:w</strong> - Spara filen</li>
+				<li><strong>:q</strong> - Avsluta</li>
+				<li><strong>:wq</strong> - Spara och avsluta</li>
+			</ul>
+		</section>
+
+		<section class="mt-8">
+			<h2 class="text-3xl font-semibold mb-4">5. Replace Mode</h2>
+			<p>Replace Mode låter dig ersätta tecken direkt utan att behöva radera först.</p>
+			<ul class="list-disc ml-8 mt-4">
+				<li><strong>r</strong> - Ersätt ett enskilt tecken</li>
+				<li><strong>R</strong> - Gå in i Replace Mode för att skriva över text</li>
+			</ul>
+		</section>
+
+		<section class="mt-8">
+			<a href="vimmotions.html">Tillbaka till motions.</a><br>
+			<a href="index.html">Tillbaka till huvudsidan.</a>
+		</section>
+	</main>
+
+	<footer class="text-center py-6 text-gray-400">
+		<p>© 2025 Vim Modes Guide</p>
+	</footer>
+</body>
+
+</html>

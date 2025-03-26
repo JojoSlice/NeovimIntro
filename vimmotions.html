@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vim Motions Guide</title>
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-black font-sans leading-relaxed">
+
+	<header class="bg-blue-800 text-white text-center py-6">
+		<h1 class="text-4xl font-bold">Vim Motions Guide</h1>
+		<p class="text-lg">En guide för att navigera effektivt i Vim och Neovim</p>
+	</header>
+
+	<main class="container mx-auto my-8 p-6 bg-blue-300 shadow-lg rounded-lg max-w-screen-lg">
+		<h2 class="text-2xl font-semibold mb-4">Vad är Vim Motions?</h2>
+		<p>Vim-motions är rörelser som låter dig snabbt navigera genom text i Vim och Neovim. De är grunden för
+			att använda Vim effektivt och snabbt. Dessa utförs i normal mode!</p><br>
+		<p class="text-lg">För att förstå modes <a href="modes.html">klicka här!</a>
+
+		<h2 class="text-2xl font-semibold mt-8 mb-4">Grundläggande Rörelser</h2>
+		<ul class="list-disc ml-8 space-y-2">
+			<li><code>h</code>, <code>j</code>, <code>k</code>, <code>l</code>: Flytta markören vänster,
+				ner, upp eller höger</li>
+			<li><code>w</code>, <code>b</code>: Flytta markören till nästa eller föregående ord</li>
+			<li><code>0</code>, <code>$</code>: Gå till början eller slutet av raden</li>
+			<li><code>gg</code>, <code>G</code>: Gå till början eller slutet av filen</li>
+		</ul>
+
+		<h2 class="text-2xl font-semibold mt-8 mb-4">Komplexare Rörelser</h2>
+		<ul class="list-disc ml-8 space-y-2">
+			<li><code>%</code>: Hoppa till matchande parentes</li>
+			<li><code>f<char></code>, <code>t<char></code>: Hoppa till en specifik karaktär i raden</li>
+			<li><code>/text</code>: Sök framåt efter ett textstycke</li>
+			<li><code>?text</code>: Sök bakåt efter ett textstycke</li>
+		</ul>
+
+		<h2 class="text-2xl font-semibold mt-8 mb-4">Funktionella Rörelser</h2>
+		<ul class="list-disc ml-8 space-y-2">
+			<li><code>dw</code>, <code>d$</code>, <code>diw</code>: Radera ett ord, till slutet av raden,
+				eller ett ord utan mellanslag</li>
+			<li><code>cw</code>: Ändra ett ord</li>
+			<li><code>y$</code>: Kopiera till slutet av raden</li>
+		</ul>
+
+		<h2 class="text-2xl font-semibold mt-8 mb-4">Tips och Tricks</h2>
+		<ul class="list-disc ml-8 space-y-2">
+			<li><code>Ctrl-o</code>: Hoppa bakåt i historiken av rörelser</li>
+			<li><code>Ctrl-i</code>: Hoppa framåt i historiken av rörelser</li>
+		</ul>
+		<br>
+		<a href="index.html">Tillbaka till huvudsidan.</a>
+
+	</main>
+
+	<footer class="bg-gray-900 text-center py-4 text-gray-400">
+		<p>© 2025 Vim Motions Guide</p>
+	</footer>
+
+</body>
+
+</html>
