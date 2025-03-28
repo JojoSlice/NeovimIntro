@@ -1,36 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Intro till Neovim</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Neovim Intro</title>
 	<script src="https://cdn.tailwindcss.com"></script>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+
+	<style>
+		.nav-links {
+			transition: top 0.3s ease-in-out;
+		}
+	</style>
 </head>
 
-<body class="bg-cover font-mono leading-relaxed" style="background-image: url(images/main.jpg);">
-	<header class="bg-cover text-gray-700 text-center py-6" style="background-image: url('images/head.jpg');">
-		<h1 class="text-4xl font-bold">Intro till Neovim</h1>
-		<p class="text-lg">En snabbstartsguide för att komma igång med Neovim</p>
+
+<body class="font-[Poppins] bg-gradient-to-t from-[#5f2c82] to-[#49a09d] min-h-screen">
+	<header class="bg-gray-500">
+		<nav class="flex justify-between items-center w-[92%] mx-auto">
+			<div>
+				<img class="w-36" src="images/NvimTrans.png" alt="...">
+			</div>
+			<div
+				class="nav-links md:static absolute bg-gray-500 md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
+				<ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+					<li>
+						<a class="hover:text-gray-400" href="index.html">Hem</a>
+					</li>
+					<li>
+						<a class="hover:text-gray-400" href="terminal.html">Terminaler</a>
+					</li>
+					<li>
+						<a class="hover:text-gray-400"
+							href="kickstart.html">Neovim/Kickstart</a>
+					</li>
+					<li>
+						<a class="hover:text-gray-400" href="modes.html">Modes</a>
+					</li>
+					<li>
+						<a class="hover:text-gray-400" href="vimmotions.html">Motions</a>
+					</li>
+					<li>
+						<a class="hover:text-gray-400" href="setupshare.html">Dela
+							Nvim-configs</a>
+					</li>
+				</ul>
+			</div>
+			<div class="flex items-center gap-6">
+				<button class="bg-[#49a09d] text-white px-5 py-2 rounded-full hover:bg-[#5f2c82]">Sign
+					in</button>
+
+				<img onclick="onToggleMenu(this)" src="images/menu.svg"
+					class="w-8 h-8 cursor-pointer md:hidden">
+			</div>
+		</nav>
 	</header>
-
-	<iframe src="menu.html"
-		class="w-full min-h-[50px] h-auto sm:h-16 border-none bg-gray-400 bg-opacity-80"></iframe>
-
-	<main class="container mx-auto my-8 p-6 bg-blue-200 bg-opacity-95 shadow-lg rounded-lg max-w-screen-md">
+	<main class="container mx-auto my-8 p-6 bg-slate-500 bg-opacity-95 shadow-lg rounded-lg max-w-screen-md">
 		<h2 class="text-2xl font-semibold mb-4">Vad är Neovim?</h2>
 		<p>Neovim är en kraftfull och modern omarbetning av textredigeraren Vim. Det är designat för att vara
 			snabbare och mer anpassningsbart, vilket gör det till ett populärt val för utvecklare.</p>
 
 		<h2 class="text-2xl font-semibold mt-8 mb-4">Varför använda Neovim?</h2>
 		<ul class="list-disc ml-8 space-y-2 text-lg text-gray-800">
-			<li><a href="vimmotions.html" class="text-blue-400 hover:underline">Vim Motions</a></li>
-			<li>Extremt anpassningsbar med Lua-konfiguration. Starta med: <a href="kickstart.html"
+			<li>Med vim motions kan man snabbt redigera och navigera i text/kod <br> <a
+					href="vimmotions.html" class="text-blue-400 hover:underline">Vim Motions</a>
+			</li>
+			<li>Extremt anpassningsbar med Lua-konfiguration. <br> Starta med: <a href="kickstart.html"
 					class="text-blue-400 hover:underline">Neovim
 					Kickstart</a></li>
-			<li>Stöd för plugins och community-tillägg</li>
-			<li>Funkar i alla terminaler. Se: <a href="terminal.html"
+			<li>Stöd för mängder plugins och community-tillägg</li>
+			<li>Funkar i alla terminaler. <br> Se: <a href="terminal.html"
 					class="text-blue-400 hover:underline">Terminaler</a></li>
 		</ul>
 
@@ -38,7 +80,7 @@
 		<p>Du kan installera Neovim via ditt pakethanteringssystem i din terminal.<br>
 			Här är ett exempel för några vanliga system:</p>
 
-		<pre class="bg-gray-400 p-4 rounded-lg text-white overflow-x-auto">
+		<pre class="bg-gradient-to-t from-[#5f2c82] to-[#49a09d] p-4 rounded-lg text-white overflow-x-auto">
 			# För Ubuntu/Debian
 			sudo apt install neovim
 
@@ -51,9 +93,14 @@
 
 
 	</main>
-	<footer class="bg-gray-900 text-center py-4 text-gray-400">
-		<p>© 2025 Neovim Guide för Klasskompisar</p>
-	</footer>
+	<script>
+		const navLinks = document.querySelector('.nav-links')
+		function onToggleMenu(e) {
+			e.src = e.src.includes("menu.svg") ? "images/close.svg" : "images/menu.svg";
+			navLinks.classList.toggle('top-[9%]')
+		}
+	</script>
+
 </body>
 
 </html>

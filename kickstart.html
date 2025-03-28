@@ -5,21 +5,61 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Kickstart Guide för Neovim</title>
-	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+
+	<style>
+		.nav-links {
+			transition: top 0.3s ease-in-out;
+		}
+	</style>
 </head>
 
 
-<body class="bg-cover font-mono leading-relaxed" style="background-image: url(images/main.jpg);">
+<body class="font-[Poppins] bg-gradient-to-t from-[#5f2c82] to-[#49a09d] min-h-screen">
+	<header class="bg-gray-500">
+		<nav class="flex justify-between items-center w-[92%] mx-auto">
+			<div>
+				<img class="w-36" src="images/NvimTrans.png" alt="...">
+			</div>
+			<div
+				class="nav-links md:static absolute bg-gray-500 md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
+				<ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+					<li>
+						<a class="hover:text-gray-400" href="index.html">Hem</a>
+					</li>
+					<li>
+						<a class="hover:text-gray-400" href="terminal.html">Terminaler</a>
+					</li>
+					<li>
+						<a class="hover:text-gray-400"
+							href="kickstart.html">Neovim/Kickstart</a>
+					</li>
+					<li>
+						<a class="hover:text-gray-400" href="modes.html">Modes</a>
+					</li>
+					<li>
+						<a class="hover:text-gray-400" href="vimmotions.html">Motions</a>
+					</li>
+					<li>
+						<a class="hover:text-gray-400" href="setupshare.html">Dela
+							Nvim-configs</a>
+					</li>
+				</ul>
+			</div>
+			<div class="flex items-center gap-6">
+				<button class="bg-[#49a09d] text-white px-5 py-2 rounded-full hover:bg-[#5f2c82]">Sign
+					in</button>
 
-	<header class="bg-cover bg-conter text-gray-700 text-center py-6"
-		style="background-image: url('images/head.jpg');">
-
-		<h1 class="text-4xl font-bold">Kickstart Guide för Neovim</h1>
-		<p class="text-lg">Lär dig hur du snabbt kommer igång med Neovim Kickstart-konfigurationen.</p>
+				<img onclick="onToggleMenu(this)" src="images/menu.svg"
+					class="w-8 h-8 cursor-pointer md:hidden">
+			</div>
+		</nav>
 	</header>
-	<iframe src="menu.html" class="w-full h-16 border-1 bg-gray-400 bg-opacity-80"></iframe>
 
-	<main class="container mx-auto my-8 p-6 bg-blue-200 bg-opacity-95 text-black shadow-lg rounded-lg">
+	<main class="container mx-auto my-8 p-6 bg-slate-500 bg-opacity-95 shadow-lg rounded-lg max-w-screen-md">
 		<h2 class="text-2xl font-semibold mb-4">Vad är Kickstart för Neovim?</h2>
 		<p>Kickstart är en enkel och snabb konfigurationsmall för Neovim som hjälper dig att komma igång med en
 			modern utvecklingsmiljö på nolltid. Den använder populära plugins och är lätt att anpassa.</p>
@@ -37,24 +77,36 @@
 
 		<h2 class="text-2xl font-semibold mt-8 mb-4">Hur kommer jag igång?</h2>
 		<p>Följ dessa enkla steg för att installera Kickstart:</p>
-		<pre class="bg-gray-400 p-4 rounded-lg overflow-x-auto text-white">
-			Hämta neovim i terminalen med:
-			"git clone https://github.com/nvim-lua/kickstart.nvim.git~/.config/nvim"
+
+
+		<pre
+			class="bg-gradient-to-t from-[#5f2c82] to-[#49a09d] p-2 sm:p-4 rounded-lg text-white overflow-x-auto max-w-full text-left">
+			Hämta neovim i terminalen med "git clone"
+			Kickstart:
+			<a class="text-blue-400 font-bold hover:underline"
+				href="https://github.com/nvim-lua/kickstart.nvim">Neovim-Kickstart</a>
 			Alternativt hämta någon av mina configs:
-			Kickstart baserad: "https://github.com/JojoSlice/KickstartNvim.git"
-			LazyVim baserad: "https://github.com/JojoSlice/nvim.git"
-			Starta sedan neovim genom att skriva "nvim .".
+			<a class="text-blue-400 font-bold hover:underline"
+				href="https://github.com/JojoSlice/KickstartNvim.git">Jojos-Kickstart</a>
+			<a class="text-blue-400 font-bold hover:underline"
+				href="https://github.com/JojoSlice/nvim.git">Jojos-LazyVim</a>
+			Starta sedan neovim genom att skriva "nvim ."
 		</pre>
+
 		<br>
 		<p>Efter att du startat Neovim kan du följa instruktionerna på skärmen för att installera plugins och
 			börja använda din nya setup.</p>
-		<br>
-		<a href="index.html">Tillbaka till huvudsidan.</a>
 	</main>
+	<script>
+		const navLinks = document.querySelector('.nav-links')
+		function onToggleMenu(e) {
+			e.src = e.src.includes("menu.svg") ? "images/close.svg" : "images/menu.svg";
+			navLinks.classList.toggle('top-[9%]')
+		}
+	</script>
 
-	<footer class="text-center py-4 text-gray-600">
-		<p>© 2025 Neovim Kickstart Guide</p>
-	</footer>
+
+
 </body>
 
 </html>
